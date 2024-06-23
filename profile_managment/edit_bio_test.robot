@@ -4,6 +4,7 @@ Resource    ../resources/login.robot
 
 *** Variables ***
 ${BIO_TEXT}    This is my updated bio.
+${SECTION_CLASS}    module-6080623561
 
 *** Test Cases ***
 Edit Bio Test
@@ -20,13 +21,11 @@ Go To Profile Page
     Go To    https://www.deviantart.com/deadfromtheborn
 
 Click Edit Button
-    Wait Until Element Is Visible     xpath=(//button[contains(@class, '_2yJNt _1aj3v _gOzo _hZXS xSB8L')])[2]  20s
-    Click Button    (xpath=//button[contains(@class, '_2yJNt _1aj3v _gOzo _hZXS xSB8L')])[2]
-
+    Wait Until Element Is Visible    xpath=//button[.//span[contains(text(), "Edit")]][1]  20s
+    Click Button   //section[contains(@id, '${SECTION_CLASS}')]//div//div//div//button[.//span[contains(text(), "Edit")]]
 
 Click Bio Tab
-    Wait Until Element Is Visible   xpath=//button[.//span[contains(text(), "Bio")]]
-   20s
+    Wait Until Element Is Visible   xpath=//button[.//span[contains(text(), "Bio")]]  20s
     Click Button    xpath=//button[.//span[contains(text(), "Bio")]]
 
 Edit Bio
