@@ -20,8 +20,8 @@ Go To Profile Page
     Go To    https://www.deviantart.com/deadfromtheborn
 
 Click Edit Button
-    Wait Until Element Is Visible     (xpath=//button[.//span[contains(text(), "Edit")]])[2]  20s
-    Click Button    (xpath=//button[.//span[contains(text(), "Edit")]])[2]
+    Wait Until Element Is Visible     xpath=(//button[contains(@class, '_2yJNt _1aj3v _gOzo _hZXS xSB8L')])[2]  20s
+    Click Button    (xpath=//button[contains(@class, '_2yJNt _1aj3v _gOzo _hZXS xSB8L')])[2]
 
 
 Click Bio Tab
@@ -37,3 +37,5 @@ Save Changes
     Wait Until Element Is Visible    xpath=//button[.//span[text()='Save']]    20s
     Click Button    xpath=//button[.//span[text()='Save']]
 
+Verify
+  Wait Until Element Is Visible xpath=//p[.//span[contains(text(), ${BIO_TEXT})]]
